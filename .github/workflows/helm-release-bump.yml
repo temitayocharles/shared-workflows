@@ -1,0 +1,40 @@
+name: Helm Release Bump
+on:
+  workflow_call:
+    inputs:
+      values_repo:
+        required: true
+        type: string
+      values_path:
+        required: true
+        type: string
+      image_tag:
+        required: true
+        type: string
+    secrets:
+      git_token:
+        required: true
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.values_repo }}
+          token: ${{ secrets.git_token }}
+      - name: Update image tag
+        run: |
+          sed -i "s/^  tag:.*/  tag: ${IMAGE_TAG}/" ${VALUES_PATH}
+        env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+          VALUES_PATH: ${{ inputs.values_path }}
+      - name: Commit & push
+        run: |
+          git config user.name "ci-bot"
+          git config user.email "ci@local"
+          git add ${VALUES_PATH}
+          git commit -m "chore: bump image tag to ${IMAGE_TAG}" || exit 0
+          git push
+        env:
+          IMAGE_TAG: ${{ inputs.image_tag }}
+          VALUES_PATH: ${{ inputs.values_path }}

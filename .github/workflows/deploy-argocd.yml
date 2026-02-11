@@ -1,0 +1,27 @@
+name: ArgoCD Sync
+on:
+  workflow_call:
+    inputs:
+      app_name:
+        required: true
+        type: string
+      argocd_server:
+        required: true
+        type: string
+    secrets:
+      argocd_token:
+        required: true
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ArgoCD Sync
+        run: |
+          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+          chmod +x /usr/local/bin/argocd
+          argocd login ${ARGOCD_SERVER} --insecure --auth-token ${ARGOCD_TOKEN}
+          argocd app sync ${APP_NAME}
+        env:
+          APP_NAME: ${{ inputs.app_name }}
+          ARGOCD_SERVER: ${{ inputs.argocd_server }}
+          ARGOCD_TOKEN: ${{ secrets.argocd_token }}

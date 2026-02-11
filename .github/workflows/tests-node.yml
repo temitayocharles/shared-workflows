@@ -1,0 +1,21 @@
+name: Node Tests
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        default: "20"
+      test-cmd:
+        type: string
+        default: "npm test"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: ${{ inputs.test-cmd }}
