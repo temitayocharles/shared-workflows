@@ -22,12 +22,10 @@ jobs:
         with:
           repository: ${{ inputs.values_repo }}
           token: ${{ secrets.git_token }}
-      - name: Update image tag
-        run: |
-          sed -i "s/^  tag:.*/  tag: ${IMAGE_TAG}/" ${VALUES_PATH}
-        env:
-          IMAGE_TAG: ${{ inputs.image_tag }}
-          VALUES_PATH: ${{ inputs.values_path }}
+      - uses: ./.github/actions/helm-bump
+        with:
+          values_file: ${{ inputs.values_path }}
+          image_tag: ${{ inputs.image_tag }}
       - name: Commit & push
         run: |
           git config user.name "ci-bot"

@@ -1,0 +1,36 @@
+name: "Helm Values Bump"
+description: "Update image tag or repository in a Helm values file."
+inputs:
+  values_file:
+    description: "Path to values file"
+    required: true
+  tag_path:
+    description: "YQ path to image tag"
+    required: false
+    default: ".image.tag"
+  repo_path:
+    description: "YQ path to image repository"
+    required: false
+    default: ""
+  image_tag:
+    description: "Image tag value"
+    required: true
+  image_repo:
+    description: "Image repository value"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Install yq
+      uses: mikefarah/yq@v4
+
+    - name: Update values file
+      shell: bash
+      run: |
+        set -euo pipefail
+        yq -i "${{ inputs.tag_path }} = \"${{ inputs.image_tag }}\"" "${{ inputs.values_file }}"
+        if [ -n "${{ inputs.repo_path }}" ] && [ -n "${{ inputs.image_repo }}" ]; then
+          yq -i "${{ inputs.repo_path }} = \"${{ inputs.image_repo }}\"" "${{ inputs.values_file }}"
+        fi
+        echo "Updated ${{ inputs.values_file }}"

@@ -1,0 +1,29 @@
+name: "Gitleaks Scan"
+description: "Run gitleaks and optionally fail on findings."
+inputs:
+  config_path:
+    description: "Path to gitleaks config"
+    required: false
+    default: ".gitleaks.toml"
+  report_path:
+    description: "Report file path"
+    required: false
+    default: "gitleaks-report.json"
+  fail_on_findings:
+    description: "Fail job if leaks are found"
+    required: false
+    default: "true"
+  redact:
+    description: "Redact secrets in report"
+    required: false
+    default: "true"
+runs:
+  using: "composite"
+  steps:
+    - name: Run gitleaks
+      uses: gitleaks/gitleaks-action@v2
+      with:
+        config-path: ${{ inputs.config_path }}
+        report-path: ${{ inputs.report_path }}
+        redact: ${{ inputs.redact }}
+        fail: ${{ inputs.fail_on_findings }}

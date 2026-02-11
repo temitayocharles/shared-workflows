@@ -1,0 +1,49 @@
+name: "Docker Build"
+description: "Build a Docker image without pushing."
+inputs:
+  image_name:
+    description: "Image name"
+    required: true
+  context:
+    description: "Build context"
+    required: false
+    default: "."
+  dockerfile:
+    description: "Dockerfile path"
+    required: false
+    default: "Dockerfile"
+  tags:
+    description: "Comma-separated tags"
+    required: false
+    default: "latest"
+  build_args:
+    description: "Multiline build args"
+    required: false
+    default: ""
+outputs:
+  image:
+    description: "Image name with first tag"
+    value: ${{ steps.meta.outputs.image }}
+runs:
+  using: "composite"
+  steps:
+    - name: Set output image
+      id: meta
+      shell: bash
+      run: |
+        set -euo pipefail
+        first_tag=$(echo "${{ inputs.tags }}" | awk -F',' '{print $1}')
+        echo "image=${{ inputs.image_name }}:${first_tag}" >> "$GITHUB_OUTPUT"
+
+    - name: Set up Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build image
+      uses: docker/build-push-action@v5
+      with:
+        context: ${{ inputs.context }}
+        file: ${{ inputs.dockerfile }}
+        tags: ${{ inputs.image_name }}:${{ inputs.tags }}
+        build-args: ${{ inputs.build_args }}
+        push: false
+        load: true

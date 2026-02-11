@@ -1,0 +1,43 @@
+name: "ArgoCD Sync"
+description: "Sync an ArgoCD application."
+inputs:
+  server:
+    description: "ArgoCD server, e.g. https://argocd.example.com"
+    required: true
+  token:
+    description: "ArgoCD auth token"
+    required: true
+  app:
+    description: "ArgoCD application name"
+    required: true
+  insecure:
+    description: "Use --insecure"
+    required: false
+    default: "true"
+  grpc_web:
+    description: "Use --grpc-web"
+    required: false
+    default: "true"
+runs:
+  using: "composite"
+  steps:
+    - name: Install argocd CLI
+      shell: bash
+      run: |
+        set -euo pipefail
+        curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+        chmod +x /usr/local/bin/argocd
+
+    - name: Sync application
+      shell: bash
+      run: |
+        set -euo pipefail
+        args=()
+        if [ "${{ inputs.insecure }}" = "true" ]; then
+          args+=("--insecure")
+        fi
+        if [ "${{ inputs.grpc_web }}" = "true" ]; then
+          args+=("--grpc-web")
+        fi
+        argocd login "${{ inputs.server }}" --auth-token "${{ inputs.token }}" "${args[@]}"
+        argocd app sync "${{ inputs.app }}" "${args[@]}"

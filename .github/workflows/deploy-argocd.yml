@@ -15,13 +15,8 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: ArgoCD Sync
-        run: |
-          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-          chmod +x /usr/local/bin/argocd
-          argocd login ${ARGOCD_SERVER} --insecure --auth-token ${ARGOCD_TOKEN}
-          argocd app sync ${APP_NAME}
-        env:
-          APP_NAME: ${{ inputs.app_name }}
-          ARGOCD_SERVER: ${{ inputs.argocd_server }}
-          ARGOCD_TOKEN: ${{ secrets.argocd_token }}
+      - uses: ./.github/actions/argocd-sync
+        with:
+          app: ${{ inputs.app_name }}
+          server: ${{ inputs.argocd_server }}
+          token: ${{ secrets.argocd_token }}

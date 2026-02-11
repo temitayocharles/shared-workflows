@@ -1,0 +1,64 @@
+name: "Vault Multi-Secret Export"
+description: "Fetch multiple Vault secrets and build a flat env file."
+inputs:
+  vault_addr:
+    description: "Vault address, e.g. https://vault.example.com"
+    required: true
+  vault_username:
+    description: "Vault userpass username"
+    required: true
+  vault_password:
+    description: "Vault userpass password"
+    required: true
+  secrets_list:
+    description: "Vault secrets list for hashicorp/vault-action"
+    required: true
+  output_file:
+    description: "Output env file name"
+    required: false
+    default: "vault.env"
+  output_dir:
+    description: "Directory to write the env file"
+    required: false
+    default: "exported"
+  artifact_name:
+    description: "Optional artifact name"
+    required: false
+    default: "vault-secrets"
+  upload_artifact:
+    description: "Upload env file as artifact"
+    required: false
+    default: "true"
+runs:
+  using: "composite"
+  steps:
+    - name: Fetch secrets from Vault
+      uses: hashicorp/vault-action@v2
+      with:
+        url: ${{ inputs.vault_addr }}
+        method: userpass
+        username: ${{ inputs.vault_username }}
+        password: ${{ inputs.vault_password }}
+        kvVersion: 2
+        secrets: ${{ inputs.secrets_list }}
+
+    - name: Build flat env file
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p "${{ inputs.output_dir }}"
+        outfile="${{ inputs.output_dir }}/${{ inputs.output_file }}"
+        > "$outfile"
+        env_vars=$(echo "${{ inputs.secrets_list }}" | tr ';' '\n' | awk -F'|' 'NF>=2 {gsub(/^[ \t]+|[ \t]+$/, "", $2); print $2}' | sed '/^$/d')
+        for env_var in $env_vars; do
+          value="$(printenv "$env_var" || true)"
+          echo "${env_var}=${value}" >> "$outfile"
+        done
+        echo "Wrote $outfile"
+
+    - name: Upload env file artifact
+      if: ${{ inputs.upload_artifact == 'true' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.artifact_name }}
+        path: ${{ inputs.output_dir }}/${{ inputs.output_file }}
