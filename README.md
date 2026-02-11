@@ -40,6 +40,11 @@ jobs:
 - `docker-push`
 - `helm-bump`
 - `argocd-sync`
+- `trivy-scan`
+- `checkov-scan`
+- `snyk-scan`
+- `sonarqube-scan`
+- `quality-gate`
 
 ## Dependency Graph
 ```

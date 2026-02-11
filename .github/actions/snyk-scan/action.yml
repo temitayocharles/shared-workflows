@@ -1,0 +1,23 @@
+name: "Snyk Scan"
+description: "Run Snyk test on project."
+inputs:
+  token:
+    description: "Snyk token"
+    required: true
+  command:
+    description: "Snyk command"
+    required: false
+    default: "test"
+  args:
+    description: "Additional args"
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Run Snyk
+      uses: snyk/actions/${{ inputs.command }}@master
+      env:
+        SNYK_TOKEN: ${{ inputs.token }}
+      with:
+        args: ${{ inputs.args }}

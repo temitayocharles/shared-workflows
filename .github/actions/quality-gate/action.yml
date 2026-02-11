@@ -1,0 +1,17 @@
+name: "SonarQube Quality Gate"
+description: "Fail if quality gate fails."
+inputs:
+  host_url:
+    description: "SonarQube host URL"
+    required: true
+  token:
+    description: "Sonar token"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Check Quality Gate
+      uses: sonarsource/sonarqube-quality-gate-action@v1.1.0
+      env:
+        SONAR_HOST_URL: ${{ inputs.host_url }}
+        SONAR_TOKEN: ${{ inputs.token }}
