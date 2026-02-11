@@ -1,5 +1,9 @@
 # Shared Workflows
 
+
+## Start Here
+- Read [START_HERE.md](START_HERE.md) for the chronological playbook.
+
 Central library of reusable GitHub Actions workflows and composite actions.
 
 ## Usage
