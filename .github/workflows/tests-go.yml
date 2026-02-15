@@ -5,6 +5,9 @@ on:
       go-version:
         type: string
         default: "1.22"
+      working-directory:
+        type: string
+        default: "."
       test-cmd:
         type: string
         default: "go test ./..."
@@ -17,4 +20,5 @@ jobs:
         with:
           go-version: ${{ inputs.go-version }}
           cache: true
-      - run: ${{ inputs.test-cmd }}
+      - working-directory: ${{ inputs.working-directory }}
+        run: ${{ inputs.test-cmd }}
