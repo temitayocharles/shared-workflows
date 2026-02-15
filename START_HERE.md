@@ -9,6 +9,7 @@ Shared CI/CD building blocks used by application repos to keep pipelines consist
 - `.github/workflows/`: reusable workflow entrypoints.
 - `.github/actions/`: composite actions (gitleaks, vault, docker, helm bump, argocd, etc.).
 - `docs/`: usage docs and examples.
+  - New service pipeline pattern: [docs/NEW_SERVICE_PIPELINE.md](docs/NEW_SERVICE_PIPELINE.md)
 
 ## 3. How to Use in an App Repo
 1. Add a workflow that references this repo via `uses: temitayocharles/shared-workflows/.github/workflows/<workflow>.yml@<ref>`.
