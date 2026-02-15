@@ -23,8 +23,7 @@ Examples in this repo:
 4. Argo auto-sync reconciles the cluster.
 
 ## Cross-Repo Links
-- GitOps: `temitayocharles/platform-gitops` (`docs/NEW_SERVICE.md`)
-- Charts: `temitayocharles/helm-charts` (`docs/NEW_SERVICE.md`)
-- Vault boundaries: `temitayocharles/vault-ops` (`docs/NEW_SERVICE.md`)
-- ConfigMaps: `temitayocharles/configurations`
-
+- GitOps: [`temitayocharles/platform-gitops`](https://github.com/temitayocharles/platform-gitops) ([docs/NEW_SERVICE.md](https://github.com/temitayocharles/platform-gitops/blob/main/docs/NEW_SERVICE.md))
+- Charts: [`temitayocharles/helm-charts`](https://github.com/temitayocharles/helm-charts) ([docs/NEW_SERVICE.md](https://github.com/temitayocharles/helm-charts/blob/main/docs/NEW_SERVICE.md))
+- Vault boundaries: [`temitayocharles/vault-ops`](https://github.com/temitayocharles/vault-ops) ([docs/NEW_SERVICE.md](https://github.com/temitayocharles/vault-ops/blob/main/docs/NEW_SERVICE.md))
+- ConfigMaps: [`temitayocharles/configurations`](https://github.com/temitayocharles/configurations)
