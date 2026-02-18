@@ -12,6 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Enforce default branch is main
+        shell: bash
+        run: |
+          set -euo pipefail
+          DEFAULT_BRANCH="${{ github.event.repository.default_branch }}"
+          if [[ "$DEFAULT_BRANCH" != "main" ]]; then
+            echo "Repository default branch must be 'main' (found '$DEFAULT_BRANCH')."
+            exit 1
+          fi
+
       - name: Detect repository content
         id: detect
         shell: bash
