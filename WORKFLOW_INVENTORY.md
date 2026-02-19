@@ -17,7 +17,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `cila-health-monolith` | `Laravel CI` | `.github/workflows/ci.yaml` | **repo-specific** | Custom workflow logic. |
 | `cila-health-monolith` | `Dependabot Updates` | `dynamic/dependabot/dependabot-updates` | **repo-specific** | GitHub-managed dynamic workflow. |
 | `configurations` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `devops-mission-control` | `CI` | `.github/workflows/ci.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
+| `devops-mission-control` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `devops-portfolio` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `devops-portfolio` | `Deploy to Render` | `.github/workflows/deploy-to-render.yml` | **repo-specific** | Custom workflow logic. |
 | `devops-portfolio` | `Build and Push Multi-Arch Docker Image` | `.github/workflows/docker-build-push.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
@@ -62,7 +62,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `mindbridge-nigeria` | `🚀 CI/CD Pipeline - Build, Test & Deploy` | `.github/workflows/ci-cd.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
 | `musicvibe-cicd-project` | `MusicVibe CI` | `.github/workflows/ci-cd-pipeline.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
 | `my-terraform-k8s` | `Boardgame CI` | `.github/workflows/ci-cd-pipeline.yml` | **repo-specific** | Custom workflow logic. |
-| `ops-tool` | `CI` | `.github/workflows/ci.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
+| `ops-tool` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `platform-gitops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `shared-workflows` | `Baseline Reusable` | `.github/workflows/baseline-reusable.yml` | **repo-specific** | Custom workflow logic. |
@@ -72,6 +72,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `shared-workflows` | `Helm Release Bump` | `.github/workflows/helm-release-bump.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `Render Deploy` | `.github/workflows/render-deploy.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `Service CI (Go + GHCR)` | `.github/workflows/service-go-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
+| `shared-workflows` | `Service CI (Go Quality + Build)` | `.github/workflows/service-go-quality-build.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
 | `shared-workflows` | `Service CI (Node + GHCR)` | `.github/workflows/service-node-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
 | `shared-workflows` | `Service CI (Python + GHCR)` | `.github/workflows/service-python-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
 | `shared-workflows` | `Go Tests` | `.github/workflows/tests-go.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
