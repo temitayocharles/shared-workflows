@@ -4,7 +4,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 
 | Repo | Workflow | Path | Classification | Rationale |
 |---|---|---|---|---|
-| `a-to-z-of-networking` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `a-to-z-of-networking` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `AI-adventure-game` | `CI` | `.github/workflows/ci.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
 | `AI-adventure-game` | `Deploy (Production)` | `.github/workflows/deploy-production.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `AI-adventure-game` | `Deploy (Staging)` | `.github/workflows/deploy-staging.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
@@ -14,9 +14,10 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `cila-health-microservices` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `cila-health-microservices` | `Device Ingestion CI` | `.github/workflows/ci.yaml` | **shared candidate** | Standard Python test pattern; covered by tests-python/service-python-ci-ghcr. |
 | `cila-health-microservices` | `Dependabot Updates` | `dynamic/dependabot/dependabot-updates` | **repo-specific** | GitHub-managed dynamic workflow. |
+| `cila-health-monolith` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `cila-health-monolith` | `Laravel CI` | `.github/workflows/ci.yaml` | **repo-specific** | Custom workflow logic. |
 | `cila-health-monolith` | `Dependabot Updates` | `dynamic/dependabot/dependabot-updates` | **repo-specific** | GitHub-managed dynamic workflow. |
-| `configurations` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `configurations` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `devops-mission-control` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `devops-portfolio` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `devops-portfolio` | `Deploy to Render` | `.github/workflows/deploy-to-render.yml` | **repo-specific** | Custom workflow logic. |
@@ -25,21 +26,21 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `devops-portfolio` | `Copilot` | `dynamic/copilot-swe-agent/copilot` | **repo-specific** | GitHub-managed dynamic workflow. |
 | `devops-portfolio` | `pages-build-deployment` | `dynamic/pages/pages-build-deployment` | **repo-specific** | GitHub-managed dynamic workflow. |
 | `DevOps-Projects` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `dotfiles` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `dotfiles` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `emergent-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `emergent-lab` | `.github/workflows/ci-cd.yml` | `.github/workflows/ci-cd.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
-| `Fast-Kubernetes` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `Fast-Kubernetes` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-account-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-account-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-analytics-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-analytics-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-audit-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-audit-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `fintech-docs` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `fintech-docs` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-frontend` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-frontend` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-gitops` | `Update Image Tags` | `.github/workflows/update-images.yaml` | **repo-specific** | Custom workflow logic. |
-| `fintech-infra` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `fintech-infra` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-notification-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-notification-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-transaction-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
@@ -47,9 +48,9 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `fintech-user-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-user-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `foodshare-app` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `Geth-prysm-go-peeer` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `hello-k8s` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `helm-charts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `Geth-prysm-go-peeer` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `hello-k8s` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `helm-charts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `infra-environments` | `Infra Environments CI` | `.github/workflows/terraform-live-ci.yml` | **repo-specific** | Custom workflow logic. |
 | `kubectl-mcp-server` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `kubectl-mcp-server` | `Build & Publish Multi-Arch Docker Image` | `.github/workflows/docker-multiarch.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
@@ -57,13 +58,15 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `kubectl-mcp-server` | `Publish to npm and GitHub Packages` | `.github/workflows/publish-to-npm.yml` | **repo-specific** | Custom workflow logic. |
 | `kubectl-mcp-server` | `Publish to PyPI` | `.github/workflows/publish-to-pypi.yml` | **repo-specific** | Custom workflow logic. |
 | `kubernetes-debugging` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `kubernetes-practice-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `local-business-website-production` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `kubernetes-practice-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `local-business-website-production` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `mindbridge-nigeria` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `mindbridge-nigeria` | `🚀 CI/CD Pipeline - Build, Test & Deploy` | `.github/workflows/ci-cd.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
+| `musicvibe-cicd-project` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `musicvibe-cicd-project` | `MusicVibe CI` | `.github/workflows/ci-cd-pipeline.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
 | `my-terraform-k8s` | `Boardgame CI` | `.github/workflows/ci-cd-pipeline.yml` | **repo-specific** | Custom workflow logic. |
 | `ops-tool` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `platform-gitops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `platform-gitops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `shared-workflows` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `shared-workflows` | `Baseline Reusable` | `.github/workflows/baseline-reusable.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `ArgoCD Sync` | `.github/workflows/deploy-argocd.yml` | **repo-specific** | Custom workflow logic. |
@@ -89,11 +92,11 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `temitayocharles.github.io` | `pages-build-deployment` | `dynamic/pages/pages-build-deployment` | **repo-specific** | GitHub-managed dynamic workflow. |
 | `terraform-aws-eks-operation-scheduler` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `terraform-module` | `Terraform CI` | `.github/workflows/terraform-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `ultimate-devops-platform` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `ultimate-devops-platform` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `ultimate-docker-k8s-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `ultimate-docker-k8s-lab` | `Build and Push Multi-Arch Docker Image` | `.github/workflows/docker-build.yml` | **repo-specific** | Custom workflow logic. |
-| `utilities-scripts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `vault-ops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
+| `utilities-scripts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `vault-ops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `virtual-vacation` | `Build and Push Multi-Arch Images` | `.github/workflows/build-and-push-images.yml` | **repo-specific** | Custom workflow logic. |
 | `virtual-vacation` | `.github/workflows/build-base-images.yml` | `.github/workflows/build-base-images.yml` | **repo-specific** | Custom workflow logic. |
 | `virtual-vacation` | `.github/workflows/build-consolidated-images.yml` | `.github/workflows/build-consolidated-images.yml` | **repo-specific** | Custom workflow logic. |
