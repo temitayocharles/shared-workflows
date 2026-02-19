@@ -20,6 +20,9 @@ def classify(repo: str, path: str, text: str) -> tuple[str, str]:
         or "publish-to-pypi" in path
         or "publish-to-agentregistry" in path
         or "sonarqube" in path
+        or "dockerhub-description" in text
+        or "--workspace=" in text
+        or "push: false" in text
     ):
         return ("repo-specific", "Release/security workflow with provider-specific behavior.")
     if (

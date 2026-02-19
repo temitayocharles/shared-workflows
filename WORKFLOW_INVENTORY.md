@@ -5,7 +5,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | Repo | Workflow | Path | Classification | Rationale |
 |---|---|---|---|---|
 | `a-to-z-of-networking` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `AI-adventure-game` | `CI` | `.github/workflows/ci.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
+| `AI-adventure-game` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `AI-adventure-game` | `Deploy (Production)` | `.github/workflows/deploy-production.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `AI-adventure-game` | `Deploy (Staging)` | `.github/workflows/deploy-staging.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `ArgoCD` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
@@ -53,7 +53,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `helm-charts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `infra-environments` | `Infra Environments CI` | `.github/workflows/terraform-live-ci.yml` | **repo-specific** | Custom workflow logic. |
 | `kubectl-mcp-server` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `kubectl-mcp-server` | `Build & Publish Multi-Arch Docker Image` | `.github/workflows/docker-multiarch.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
+| `kubectl-mcp-server` | `Build & Publish Multi-Arch Docker Image` | `.github/workflows/docker-multiarch.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
 | `kubectl-mcp-server` | `Publish to agentregistry` | `.github/workflows/publish-to-agentregistry.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
 | `kubectl-mcp-server` | `Publish to npm and GitHub Packages` | `.github/workflows/publish-to-npm.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
 | `kubectl-mcp-server` | `Publish to PyPI` | `.github/workflows/publish-to-pypi.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
@@ -63,8 +63,8 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `mindbridge-nigeria` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `mindbridge-nigeria` | `🚀 CI/CD Pipeline - Build, Test & Deploy` | `.github/workflows/ci-cd.yml` | **repo-specific** | Custom multi-stage security/deploy workflow. |
 | `musicvibe-cicd-project` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `musicvibe-cicd-project` | `MusicVibe CI` | `.github/workflows/ci-cd-pipeline.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
-| `my-terraform-k8s` | `Boardgame CI` | `.github/workflows/ci-cd-pipeline.yml` | **repo-specific** | Custom workflow logic. |
+| `musicvibe-cicd-project` | `MusicVibe CI` | `.github/workflows/ci-cd-pipeline.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
+| `my-terraform-k8s` | `Boardgame CI` | `.github/workflows/ci-cd-pipeline.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
 | `ops-tool` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `platform-gitops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `shared-workflows` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Reusable workflow library definition. |
@@ -95,7 +95,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `terraform-module` | `Terraform CI` | `.github/workflows/terraform-ci.yml` | **repo-specific** | Custom workflow logic. |
 | `ultimate-devops-platform` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `ultimate-docker-k8s-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `ultimate-docker-k8s-lab` | `Build and Push Multi-Arch Docker Image` | `.github/workflows/docker-build.yml` | **repo-specific** | Custom multi-stage security/deploy workflow. |
+| `ultimate-docker-k8s-lab` | `Build and Push Multi-Arch Docker Image` | `.github/workflows/docker-build.yml` | **repo-specific** | Release/security workflow with provider-specific behavior. |
 | `utilities-scripts` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `vault-ops` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `virtual-vacation` | `Build and Push Multi-Arch Images` | `.github/workflows/build-and-push-images.yml` | **repo-specific** | Custom workflow logic. |
