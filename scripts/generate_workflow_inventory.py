@@ -10,9 +10,25 @@ def run(*args: str) -> str:
     return subprocess.check_output(args).decode("utf-8", "ignore")
 
 
-def classify(path: str, text: str) -> tuple[str, str]:
+def classify(repo: str, path: str, text: str) -> tuple[str, str]:
+    if repo == "shared-workflows":
+        return ("repo-specific", "Reusable workflow library definition.")
     if path.startswith("dynamic/"):
         return ("repo-specific", "GitHub-managed dynamic workflow.")
+    if (
+        "publish-to-npm" in path
+        or "publish-to-pypi" in path
+        or "publish-to-agentregistry" in path
+        or "sonarqube" in path
+    ):
+        return ("repo-specific", "Release/security workflow with provider-specific behavior.")
+    if (
+        "security-scan" in text
+        or "upload-sarif" in text
+        or "environment: production" in text
+        or "Deploy to Production" in text
+    ):
+        return ("repo-specific", "Custom multi-stage security/deploy workflow.")
     if (
         "uses: temitayocharles/shared-workflows/.github/workflows/" in text
         or "uses: ./.github/workflows/baseline-reusable.yml" in text
@@ -54,7 +70,7 @@ def main() -> None:
                     )
                 except subprocess.CalledProcessError:
                     text = ""
-            cls, reason = classify(path, text)
+            cls, reason = classify(repo, path, text)
             rows.append((repo, wf["name"], path, cls, reason))
 
     out = [
