@@ -33,6 +33,7 @@ jobs:
 - `service-go-ci-ghcr.yml`
 - `service-go-quality-build.yml`
 - `service-python-ci-ghcr.yml`
+- `service-python-lint-unit-matrix.yml`
 - `service-node-ci-ghcr.yml`
 - `gitops-dispatch.yml`
 - `tests-python.yml`

@@ -1,0 +1,87 @@
+name: Service CI (Python Lint + Unit + Integration Matrix)
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        type: string
+        default: "3.11"
+      requirements-file:
+        type: string
+        default: "requirements.txt"
+      lint-paths:
+        type: string
+        default: "app/ tests/"
+      working-directory:
+        type: string
+        default: "."
+      unit-cmd:
+        type: string
+        default: "python -m pytest tests/ -v --cov=app --cov-report=xml"
+      run-integration-e2e:
+        type: boolean
+        default: false
+      integration-markers-json:
+        type: string
+        default: "[\"integration\",\"e2e\"]"
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+      - name: Install lint tools
+        run: python -m pip install --upgrade pip flake8 black isort
+      - name: Lint
+        run: |
+          flake8 ${{ inputs.lint-paths }} --count --select=E9,F63,F7,F82 --show-source --statistics
+          black --check ${{ inputs.lint-paths }} || true
+          isort --check-only ${{ inputs.lint-paths }} || true
+
+  unit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ${{ inputs.requirements-file }}
+      - name: Run unit tests
+        run: ${{ inputs.unit-cmd }}
+
+  integration-e2e:
+    if: ${{ inputs.run-integration-e2e }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        marker: ${{ fromJson(inputs.integration-markers-json) }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ${{ inputs.requirements-file }}
+      - name: Run tests (${{ matrix.marker }})
+        run: python -m pytest tests/ -v -m "${{ matrix.marker }}"
