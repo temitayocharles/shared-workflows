@@ -12,7 +12,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `autodesk-project` | `CI` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `cila-health-infrastructure-gitops` | `Infrastructure Lint` | `.github/workflows/lint.yaml` | **repo-specific** | Custom workflow logic. |
 | `cila-health-microservices` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
-| `cila-health-microservices` | `Device Ingestion CI` | `.github/workflows/ci.yaml` | **shared candidate** | Standard Python test pattern; covered by tests-python/service-python-ci-ghcr. |
+| `cila-health-microservices` | `Device Ingestion CI` | `.github/workflows/ci.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `cila-health-microservices` | `Dependabot Updates` | `dynamic/dependabot/dependabot-updates` | **repo-specific** | GitHub-managed dynamic workflow. |
 | `cila-health-monolith` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `cila-health-monolith` | `Laravel CI` | `.github/workflows/ci.yaml` | **repo-specific** | Custom workflow logic. |
@@ -78,6 +78,7 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `shared-workflows` | `Service CI (Go Quality + Build)` | `.github/workflows/service-go-quality-build.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
 | `shared-workflows` | `Service CI (Node + GHCR)` | `.github/workflows/service-node-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
 | `shared-workflows` | `Service CI (Python + GHCR)` | `.github/workflows/service-python-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr workflows. |
+| `shared-workflows` | `Service CI (Python Lint + Unit + Integration Matrix)` | `.github/workflows/service-python-lint-unit-matrix.yml` | **shared candidate** | Standard Python test pattern; covered by tests-python/service-python-ci-ghcr. |
 | `shared-workflows` | `Go Tests` | `.github/workflows/tests-go.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go/service-go-ci-ghcr. |
 | `shared-workflows` | `Node Tests` | `.github/workflows/tests-node.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node/service-node-ci-ghcr. |
 | `shared-workflows` | `Python Tests` | `.github/workflows/tests-python.yml` | **shared candidate** | Standard Python test pattern; covered by tests-python/service-python-ci-ghcr. |
