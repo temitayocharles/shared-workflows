@@ -30,6 +30,10 @@ jobs:
 
 ## Included Workflows
 - `docker-build-push.yml`
+- `service-go-ci-ghcr.yml`
+- `service-python-ci-ghcr.yml`
+- `service-node-ci-ghcr.yml`
+- `gitops-dispatch.yml`
 - `tests-python.yml`
 - `tests-node.yml`
 - `tests-go.yml`
@@ -64,3 +68,4 @@ app repo
 ## Architecture Maps
 - [DEPENDENCY_LADDER.md](./DEPENDENCY_LADDER.md)
 - [ARCHITECTURE.md](./ARCHITECTURE.md)
+- [WORKFLOW_INVENTORY.md](./WORKFLOW_INVENTORY.md)

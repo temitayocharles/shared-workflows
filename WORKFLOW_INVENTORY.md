@@ -29,23 +29,23 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `emergent-lab` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `emergent-lab` | `.github/workflows/ci-cd.yml` | `.github/workflows/ci-cd.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
 | `Fast-Kubernetes` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `fintech-account-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-account-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
-| `fintech-analytics-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-analytics-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
-| `fintech-audit-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-audit-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
+| `fintech-account-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-account-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-analytics-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-analytics-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-audit-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-audit-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-docs` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `fintech-frontend` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-frontend` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
+| `fintech-frontend` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-frontend` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `fintech-gitops` | `Update Image Tags` | `.github/workflows/update-images.yaml` | **repo-specific** | Custom workflow logic. |
 | `fintech-infra` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
-| `fintech-notification-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-notification-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
-| `fintech-transaction-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-transaction-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
-| `fintech-user-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
-| `fintech-user-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
+| `fintech-notification-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-notification-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-transaction-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-transaction-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-user-service` | `ci` | `.github/workflows/ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
+| `fintech-user-service` | `Update GitOps` | `.github/workflows/dispatch-gitops.yaml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `foodshare-app` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **shared candidate (already reusable)** | Calls shared-workflows reusable workflow. |
 | `Geth-prysm-go-peeer` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
 | `hello-k8s` | `Baseline CI` | `.github/workflows/baseline-ci.yml` | **repo-specific** | Custom workflow logic. |
@@ -68,8 +68,12 @@ Generated from GitHub Actions workflow metadata across non-archived repositories
 | `shared-workflows` | `Baseline Reusable` | `.github/workflows/baseline-reusable.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `ArgoCD Sync` | `.github/workflows/deploy-argocd.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `Docker Build & Push` | `.github/workflows/docker-build-push.yml` | **repo-specific** | Custom workflow logic. |
+| `shared-workflows` | `GitOps Repository Dispatch` | `.github/workflows/gitops-dispatch.yml` | **shared candidate** | Standard GitOps dispatch pattern; now covered by gitops-dispatch.yml. |
 | `shared-workflows` | `Helm Release Bump` | `.github/workflows/helm-release-bump.yml` | **repo-specific** | Custom workflow logic. |
 | `shared-workflows` | `Render Deploy` | `.github/workflows/render-deploy.yml` | **repo-specific** | Custom workflow logic. |
+| `shared-workflows` | `Service CI (Go + GHCR)` | `.github/workflows/service-go-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
+| `shared-workflows` | `Service CI (Node + GHCR)` | `.github/workflows/service-node-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
+| `shared-workflows` | `Service CI (Python + GHCR)` | `.github/workflows/service-python-ci-ghcr.yml` | **shared candidate** | Standard GHCR build/push pattern; covered by service-*ci-ghcr reusables. |
 | `shared-workflows` | `Go Tests` | `.github/workflows/tests-go.yml` | **shared candidate** | Standard Go test pattern; covered by tests-go.yml/service-go-ci-ghcr.yml. |
 | `shared-workflows` | `Node Tests` | `.github/workflows/tests-node.yml` | **shared candidate** | Standard Node test/build pattern; covered by tests-node.yml/service-node-ci-ghcr.yml. |
 | `shared-workflows` | `Python Tests` | `.github/workflows/tests-python.yml` | **shared candidate** | Standard Python test pattern; covered by tests-python.yml/service-python-ci-ghcr.yml. |
