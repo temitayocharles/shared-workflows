@@ -31,6 +31,7 @@ jobs:
 ## Included Workflows
 - `docker-build-push.yml`
 - `service-go-ci-ghcr.yml`
+- `service-go-quality-build.yml`
 - `service-python-ci-ghcr.yml`
 - `service-node-ci-ghcr.yml`
 - `gitops-dispatch.yml`
