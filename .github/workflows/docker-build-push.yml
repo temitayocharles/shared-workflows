@@ -51,7 +51,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: ${{ inputs.context }}
-          dockerfile: ${{ inputs.dockerfile }}
+          file: ${{ inputs.dockerfile }}
           push: true
           tags: ${{ inputs.image_name }}:${{ inputs.tags }}
           platforms: ${{ inputs.platforms }}
