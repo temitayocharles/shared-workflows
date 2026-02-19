@@ -1,0 +1,39 @@
+name: GitOps Repository Dispatch
+
+on:
+  workflow_call:
+    inputs:
+      target-repository:
+        required: true
+        type: string
+      event-type:
+        required: true
+        type: string
+      service:
+        required: true
+        type: string
+      sha:
+        required: false
+        type: string
+        default: ""
+    secrets:
+      token:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    env:
+      EFFECTIVE_SHA: ${{ inputs.sha != '' && inputs.sha || github.sha }}
+    steps:
+      - name: Repository dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.token }}
+          repository: ${{ inputs.target-repository }}
+          event-type: ${{ inputs.event-type }}
+          client-payload: >-
+            {"service":"${{ inputs.service }}","sha":"${{ env.EFFECTIVE_SHA }}"}
